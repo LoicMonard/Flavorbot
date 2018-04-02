@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# VS code environment variables file
+.editorconfig
+
+# Database keys
+config/

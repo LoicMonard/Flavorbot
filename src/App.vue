@@ -4,6 +4,13 @@
 </template>
 
 <script>
+
+import Firebase from 'firebase';
+
+const dbConfig = require('../config/db.js');
+const firebase = Firebase.initializeApp(dbConfig);
+const database = firebase.database();
+
 export default {
   name: 'app'
 }
