@@ -1,23 +1,31 @@
 <template>
   <div id="app">
-    <h5>Hi there</h5>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 
 import Firebase from 'firebase';
-
-const dbConfig = require('../config/db.js');
-const firebase = Firebase.initializeApp(dbConfig);
-const database = firebase.database();
+import Login from './components/Login';
 
 export default {
   name: 'app'
 }
 </script>
 
-<style lang="sass">
+<style>
+  html, body {
+    padding: 0;
+  }
 
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
 </style>
 
