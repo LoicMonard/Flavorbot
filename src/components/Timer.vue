@@ -1,11 +1,21 @@
 <template>
   <div id="timer">
-    <span>Days : {{leftTime.days}}, hours : {{leftTime.hours}}, minutes: {{leftTime.minutes}}, seconds: {{leftTime.seconds}}</span>
-    
-    <span v-for="timer in timers" :key="timer.timer">
-      {{timer.timer}}
-    </span>
-    <br>{{timers[0]}}
+    <div class="days">
+      <span>{{leftTime.days}}</span><br>
+      <span>DAYS</span>
+    </div>
+    <div class="hours">
+      <span>{{leftTime.hours}}</span><br>
+      <span>HOURS</span>
+    </div>
+    <div class="minutes">
+      <span>{{leftTime.minutes}}</span><br>
+      <span>MINUTES</span>
+    </div>
+    <div class="seconds">
+      <span>{{leftTime.seconds}}</span><br>
+      <span>SECONDS</span>
+    </div>
     
   </div>
 </template>
@@ -41,6 +51,7 @@ export default {
       let launch = new Date(this.finalDate)
       let s = (launch.getTime() - now.getTime())/1000;
       let d = Math.floor(s/86400);
+
       this.leftTime.days = d;
       s -= d*86400;
 
@@ -58,10 +69,33 @@ export default {
     }
   },
   mounted() {
-    this.setDate();
-    // firebase.database().ref('timer').push({
-    //     timer: 'May 05, 2018 23:30:00'
-    // });
+    this.setDate(); 
+    let that = this;
+    timerRef.on('value', function(snapshot) {
+      that.finalDate = snapshot.val().timer;
+    });
   }
 }
 </script>
+
+<style scoped>
+#timer {
+  width: 100%;
+  position: fixed;
+  bottom: 10%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+#timer div {
+  margin: 0px 20px;
+}
+
+#timer div span:first-child {
+  font-size: 84px;
+  color: #353535;
+}
+</style>
+

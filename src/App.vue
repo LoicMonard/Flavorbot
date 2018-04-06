@@ -17,8 +17,14 @@ export default {
 </script>
 
 <style>
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/Montserrat-Light.ttf')
+  }
+
   html, body {
     padding: 0;
+    font-family: 'Montserrat';
   }
 
   .fade-enter-active, .fade-leave-active {
