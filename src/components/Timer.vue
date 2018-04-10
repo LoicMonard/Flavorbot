@@ -38,10 +38,10 @@ export default {
     return {
       finalDate: '',
       leftTime: {
-        days: '',
-        hours: '', 
-        minutes: '',
-        seconds: ''
+        days: '00',
+        hours: '00', 
+        minutes: '00',
+        seconds: '00'
       }
     }
   },
@@ -80,22 +80,22 @@ export default {
 
 <style scoped>
 #timer {
-  width: 100%;
-  position: fixed;
-  bottom: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   text-align: center;
-  font-size: 18px;
+  font-size: 12px;
+  color: #8d8d8d;
 }
 
 #timer div {
-  margin: 0px 20px;
+  margin: 0px 15px;
+  
 }
 
 #timer div span:first-child {
-  font-size: 84px;
-  color: #353535;
+  font-size: 42px;
+  text-shadow: #8c8c8c 0px 0px 0px;
 }
 </style>
 
