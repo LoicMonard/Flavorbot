@@ -7,7 +7,7 @@
         </transition>
         <button @click="test = !test" style="position: absolute, top: 0">Click</button><span>HEYHEYHEY</span>
       </v-content>
-      <v-footer app>
+      <v-footer class="footer" app>
         <div is="Timer"></div>
       </v-footer>
       
@@ -62,6 +62,12 @@ export default {
   #app {
     width: 100%;
     height: 100%;
+  }
+
+  .footer {
+    height: 150px !important;
+    display: flex;
+    justify-content: center;
   }
 
   .fade-enter-active, .fade-leave-active {
