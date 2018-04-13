@@ -2,10 +2,9 @@
   <v-app>
     <v-layout>
       <v-content>
-        <transition name="fade">
+        <transition name="efade">
           <router-view config="database"></router-view>
         </transition>
-        <button @click="test = !test" style="position: absolute, top: 0">Click</button><span>HEYHEYHEY</span>
       </v-content>
       <v-footer class="footer" app>
         <div is="Timer"></div>
@@ -53,7 +52,6 @@ export default {
   html, body {
     padding: 0;
     margin: 0;
-    background: #d32f2f;
     height: 100%;
     width: 100%;
   }
@@ -70,7 +68,7 @@ export default {
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
+    transition: opacity 1.2s
   }
   .fade-enter, .fade-leave-active {
     opacity: 0

@@ -12,9 +12,10 @@ Vue.use(Router)
 Vue.use(VueFire)
 Vue.use(Vuetify, {
   theme: {
-    primary: colors.red.darken2,
-    secondary: colors.orange.accent2,
-    accent: colors.red.darken3
+    primary: colors.pink.darken1,
+    secondary: colors.red.darken2,
+    accent: colors.orange.darken1,
+    error: colors.red.darken2
   }
 })
 

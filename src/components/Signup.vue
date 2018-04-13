@@ -16,7 +16,7 @@
           <v-card-actions>
             <span></span>
             <v-spacer></v-spacer>
-            <v-btn color="accent" :to="{ path: '/login'}">Connexion</v-btn>
+            <v-btn flat color="accent" :to="{ path: '/login'}">Connexion</v-btn>
             <v-btn color="accent" @click="submit" :disabled="!valid">Inscription</v-btn>
             {{test}}
           </v-card-actions>
@@ -28,7 +28,7 @@
 
 <script>
 import Firebase from 'firebase';
-import Timer from '../components/Timer.vue'
+import Timer from '../components/Timer.vue';
 import { firebase, database } from './Timer.vue';
 
 
@@ -67,7 +67,7 @@ export default {
           console.log(errorCode + ' ||| ' + errorMessage);
         });
       } else 
-        console.log('no');
+        console.log('Formulaire invalide');
     }
   },
   components: {
@@ -81,7 +81,6 @@ export default {
 
 <style>
 #card-title {
-  background: #d32f2f;
   color: #fff;
 }
 </style>
