@@ -24,8 +24,8 @@
 import Firebase from 'firebase';
 
 const dbConfig = require('../../config/db.js');
-const firebase = Firebase.initializeApp(dbConfig);
-const database = firebase.database();
+export const firebase = Firebase.initializeApp(dbConfig);
+export const database = firebase.database();
 
 let timerRef = database.ref('timer');
 

@@ -3,14 +3,13 @@
     <v-layout>
       <v-content>
         <transition name="fade">
-          <router-view></router-view>
+          <router-view config="database"></router-view>
         </transition>
         <button @click="test = !test" style="position: absolute, top: 0">Click</button><span>HEYHEYHEY</span>
       </v-content>
       <v-footer class="footer" app>
         <div is="Timer"></div>
       </v-footer>
-      
     </v-layout>
   </v-app>
 </template>
