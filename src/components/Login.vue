@@ -1,30 +1,22 @@
 <template>
-  <v-container fluid fill-height>
-    <v-layout align-center justify-center>
-      <v-flex xs12 sm6 md4>
-        <div style="text-align: center; font-size: 50px"><img src="../assets/Logo.png" style="width: 100px"></div>
-        <v-card>
-          <v-card-title id="card-title">
-            Connexion
-          </v-card-title>
-          <v-progress-linear v-if="pending" :indeterminate="true" height="2" style="margin: 0"></v-progress-linear>
-          <v-card-text>
-            <v-form v-model="valid" ref="form">
-              <v-text-field prepend-icon="person" name="email" label="Email" type="text" v-model="user.email" :rules="emailRules" required></v-text-field>
-              <v-text-field prepend-icon="lock" name="mot de passe" label="Mot de passe" v-model="user.password" id="password" type="password" :rules="passwordRules" required></v-text-field>
-              <span>{{message}}</span>
-            </v-form>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn flat color="accent" :to="{ path: '/signup'}">Inscription</v-btn>
-            <v-btn color="accent" @click="submit" :disabled="!valid">Connexion</v-btn>
-          </v-card-actions>
-        </v-card>
-        <!-- <div is="Timer"></div> -->
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <v-card>
+    <v-card-title id="card-title">
+      Connexion
+    </v-card-title>
+    <v-progress-linear v-if="pending" :indeterminate="true" height="2" style="margin: 0"></v-progress-linear>
+    <v-card-text>
+      <v-form v-model="valid" ref="form">
+        <v-text-field prepend-icon="person" name="email" label="Email" type="text" v-model="user.email" :rules="emailRules" required></v-text-field>
+        <v-text-field prepend-icon="lock" name="mot de passe" label="Mot de passe" v-model="user.password" id="password" type="password" :rules="passwordRules" required></v-text-field>
+        <span text-color="accent">{{message}}</span>
+      </v-form>
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn flat color="accent" :to="{ path: '/signup'}">Inscription</v-btn>
+      <v-btn color="accent" @click="submit" :disabled="!valid">Connexion</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -77,6 +69,13 @@ export default {
     Timer
   },
   created() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user);
+      } else {
+        console.log('no user');
+      }
+    });
   }
 }
 

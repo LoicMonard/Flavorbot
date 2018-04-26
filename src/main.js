@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Login from './components/Login.vue'
 import Signup from './components/Signup.vue'
+import Landing from './components/Landing.vue'
 import Router, { VueRouter } from 'vue-router'
 import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
@@ -21,7 +22,7 @@ Vue.use(Vuetify, {
 
 const router = new Router({
   routes: [
-    { path: '', component: Login },
+    { path: '', component: Landing },
     { path: '/login', component: Login },
     { path: '/signup', component: Signup }
   ]

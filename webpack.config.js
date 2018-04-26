@@ -61,15 +61,28 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
       },
       {
-        test: /\.(woff|woff2|otf|eot|ttf|svg)(\?.*$|$)/,
+        test: /\.(woff|woff2|otf|eot|ttf)(\?.*$|$)/,
         loader: 'url-loader?importLoaders=1&limit=100000'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'vue-svg-loader', // `vue-svg` for webpack 1.x
+        options: {
+          // optional [svgo](https://github.com/svg/svgo) options
+          svgo: {
+            plugins: [
+              {removeDoctype: true},
+              {removeComments: true}
+            ]
+          }
+        }
       }
     ]
   },
