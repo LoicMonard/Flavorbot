@@ -1,12 +1,21 @@
 <template>
   <v-app>
-    <!-- <v-toolbar id="toolbar">
+    <v-container fluid>
+    <v-toolbar id="toolbar" fixed>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>Title</v-toolbar-title>
       <v-toolbar-items>
         <v-btn flat>ACCUEIL</v-btn>
         <v-btn flat>STORE</v-btn>
         <v-btn flat>COLLECTION</v-btn>
       </v-toolbar-items>
-    </v-toolbar> -->
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn flat>ACCUEIL</v-btn>
+        <v-btn flat>STORE</v-btn>
+        <v-btn flat>COLLECTION</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
 
     <!-- <v-container fluid fill-height>
       <v-layout justify-center align-center>
@@ -36,7 +45,7 @@
         </v-flex>
       </v-layout> -->
 
-    <!-- </v-container> -->
+    </v-container>
   </v-app>
 </template>
 

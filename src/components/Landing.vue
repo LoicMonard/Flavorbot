@@ -1,12 +1,11 @@
 <template>
-  <v-container fluid fill-height>
-    <v-layout justify-center align-center>
+    <v-layout justify-center align-center style="margin-top: 20vh">
       <v-flex xs12 md6 text-xs-center>
         <div style="position: absolute; left: 50%;">
           <div class="display-3 overtitle" style="color: #3f51b5;">Flavorbot</div>
         </div>
         <div class="display-1" style="color: #c4c4c4; font-weight: 200;">Flavorbot</div>
-        <div style="box-sizing: border-box; padding: 5vh; margin: 2vh;">
+        <div style="box-sizing: border-box; padding: 5vh; margin: 2vh 0vh;">
           <RedFlacon id="redflacon"></RedFlacon>
           <img src="../assets/FlavorbotBlue-2.png" id="logo" style="width: 10vh">
           <BottleGreen id="bottlegreen"></BottleGreen>
@@ -16,7 +15,6 @@
         <v-btn outline color="indigo">Get started</v-btn>
       </v-flex>
     </v-layout>
-  </v-container>
 </template>
 
 <script>
