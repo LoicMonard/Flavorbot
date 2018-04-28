@@ -12,7 +12,8 @@
         </div>
         <div class="body-2" style="color: rgb(115, 115, 115)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div><br>
         <div class="body-2" style="color: rgb(115, 115, 115)">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div><br>
-        <v-btn outline color="indigo">Get started</v-btn>
+        <v-btn outline color="indigo" @click="showLogin = true">Get started</v-btn>
+        <Modal v-on:send="updateLogin" v-bind:dialog="showLogin"></Modal>
       </v-flex>
     </v-layout>
 </template>
@@ -20,12 +21,22 @@
 <script>
 import BottleGreen from '../assets/BottleGreen.svg'
 import RedFlacon from '../assets/RedFlacon.svg'
+import Modal from '../components/Modal.vue'
 
 export default {
   name: 'landing',
+  data: () => ({
+    showLogin: false
+  }),
   components: {
     BottleGreen,
-    RedFlacon
+    RedFlacon,
+    Modal
+  },
+  methods: {
+    updateLogin(text) {
+      this.showLogin = text
+    }
   }
 }
 </script>

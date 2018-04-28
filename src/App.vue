@@ -3,17 +3,13 @@
     <v-container fluid>
     <v-toolbar id="toolbar" fixed>
       <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
       <v-toolbar-items>
-        <v-btn flat>ACCUEIL</v-btn>
-        <v-btn flat>STORE</v-btn>
-        <v-btn flat>COLLECTION</v-btn>
+        <v-btn flat>HOME</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat>ACCUEIL</v-btn>
-        <v-btn flat>STORE</v-btn>
-        <v-btn flat>COLLECTION</v-btn>
+        <v-btn flat>GET STARTED</v-btn>
+        <v-btn flat>ABOUT</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -31,9 +27,9 @@
         </v-flex>
       </v-layout> -->
       
-          <transition name="fade" mode="out-in">
-            <router-view config="database"></router-view>
-          </transition>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
 
       <!-- <v-layout justify-center>
         <v-flex md4>
@@ -124,7 +120,7 @@ export default {
   }
 
   #toolbar {
-    background-color: transparent !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
     box-shadow: none;
   }
 
